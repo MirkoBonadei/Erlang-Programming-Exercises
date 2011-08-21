@@ -33,8 +33,8 @@
 %%---------------------------------------------------------------------------------------
 start() ->
     case gen_server:start_link({local, ?SERVER}, ?MODULE, [], []) of
-	{ok, _Pid} ->
-	    ok;
+	{ok, Pid} ->
+	    {ok, Pid};
 	{error, Reason} ->
 	    {error, Reason}
     end.
